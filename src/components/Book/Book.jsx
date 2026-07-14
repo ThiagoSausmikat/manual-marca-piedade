@@ -30,6 +30,16 @@ export default function Book({ pages }) {
     return () => window.removeEventListener('keydown', onKey);
   }, []);
 
+  // Pré-carrega todas as páginas para que a navegação não precise esperar o download
+  useEffect(() => {
+    pages.forEach((p) => {
+      if (p.image) {
+        const img = new Image();
+        img.src = p.image;
+      }
+    });
+  }, [pages]);
+
   const page = pages[current];
 
   return (
