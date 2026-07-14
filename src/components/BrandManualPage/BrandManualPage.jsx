@@ -20,6 +20,11 @@ export default function BrandManualPage() {
       <a href="/manual-marca.pdf" download className="manual-download">
         Baixar PDF
       </a>
+
+      <div className="manual-logos">
+        <img src="/rede.png" alt="Rede Piedade de Educação" className="manual-logos__img" />
+        <img src="/zele.png" alt="ZELE" className="manual-logos__img" />
+      </div>
     </main>
   );
 }

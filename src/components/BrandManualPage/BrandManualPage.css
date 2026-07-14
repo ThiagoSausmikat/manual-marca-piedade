@@ -42,3 +42,27 @@
   background: #ffffff;
   color: #000;
 }
+
+.manual-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 56px;
+}
+
+.manual-logos__img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .manual-logos {
+    gap: 28px;
+  }
+
+  .manual-logos__img {
+    height: 30px;
+  }
+}
