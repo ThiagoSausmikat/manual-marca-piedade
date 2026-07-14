@@ -1,0 +1,125 @@
+.book {
+  --page-w: min(92vw, 640px, calc(62vh * 1.414));
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 36px;
+}
+
+.book-stage {
+  position: relative;
+  width: var(--page-w);
+  aspect-ratio: 3508 / 2481;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  background: #fff;
+}
+
+.book-page {
+  width: 100%;
+  height: 100%;
+  animation: page-fade 0.35s ease;
+}
+
+@keyframes page-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.book-page-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.book-page-placeholder {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  color: #1a1a1a;
+}
+
+.book-page-placeholder__number {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #6db33f;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.book-page-placeholder__title {
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.book-page-placeholder__subtitle {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.book-nav {
+  flex: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.book-nav:hover:not(:disabled) {
+  background: rgba(109, 179, 63, 0.6);
+}
+
+.book-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.book-footer {
+  position: absolute;
+  bottom: -36px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.book-counter {
+  color: #999;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 640px) {
+  .book {
+    --page-w: min(78vw, 320px, calc(40vh * 1.414));
+    gap: 10px;
+  }
+
+  .book-nav {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
+  }
+}
