@@ -1,7 +1,7 @@
 import Book from '../Book/Book';
 import './BrandManualPage.css';
 
-const TOTAL_PAGES = 9;
+const TOTAL_PAGES = 18;
 const PAGES = Array.from({ length: TOTAL_PAGES }, (_, i) => ({
   id: i + 1,
   number: i + 1,
